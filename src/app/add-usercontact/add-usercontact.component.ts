@@ -18,13 +18,6 @@ export class AddUsercontactComponent implements OnInit {
   @Output()
   createUsercontact = new EventEmitter<UserContact>();
 
-  // usercontacts: UserContact[]; // Array<string>
-
-  /* addUserContact(usercontact: UserContact) {
-    this.usercontacts = [...this.usercontacts, usercontact];
-  } */
-
-
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
@@ -33,18 +26,10 @@ export class AddUsercontactComponent implements OnInit {
       lastname: ['', Validators.required]
     });
   }
+
   onSubmit() {
-    console.log(this.addForm.value);
-    this.createUsercontact.emit({
-      ...this.addForm.value,
-      id: 4
-    });
-    // this.addForm.reset();
+    this.userService.create(this.addForm.value);
 
     this.router.navigate(['']);
-    // this.userService.addUserContact(this.addForm.value);
-    /*  .subscribe(data => {
-        this.router.navigate(['list-user']);
-      }); */
   }
 }
