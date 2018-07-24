@@ -8,19 +8,19 @@ import { UserContact } from './usercontact.model';
 export class UsercontactService {
 
   usercontacts: UserContact[] = [{
-    id: 1,
+    id: 0,
     firstname: 'Alex',
     lastname: 'BlaBla',
     email: 'alex.blabla@aol.at'
   },
   {
-    id: 2,
+    id: 1,
     firstname: 'Otto',
     lastname: 'Blubb',
-    email: 'otto.blubb@telekom.de'
+    email: 'otto.blubb@dsl.de'
   },
   {
-    id: 3,
+    id: 2,
     firstname: 'Peter',
     lastname: 'Pan',
     email: 'peter.pan@neverland.com'
@@ -56,6 +56,13 @@ export class UsercontactService {
       .sort((a, uc) => uc.id - uc.id);
   }
 
+  getUserById(id: number) {
+    console.log(id);
+    const itemIndex = this.usercontacts.findIndex(item => item.id === id);
+    console.log(itemIndex);
+    return this.usercontacts[itemIndex];
+  }
+
   getnextId(): number {
     let highest = 0;
     this.usercontacts.forEach(function (item) {
@@ -68,15 +75,4 @@ export class UsercontactService {
     });
     return highest + 1;
   }
-
-  /* addUserContact(usercontact: UserContact): UserContact {
-    return {
-      .../UserContact;
-      // ...usercontact = [...this.usercontacts, this.addForm.value];
-      // ...usercontact,
-      // rating: Math.max(book.rating - 1, this.minRating)
-      // rating: book.rating > this.minRating ? book.rating -1 : book.rating
-    };
-  } */
-
 }

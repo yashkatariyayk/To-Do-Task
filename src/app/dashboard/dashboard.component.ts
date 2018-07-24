@@ -9,6 +9,4 @@ import { UserContact } from '../share/usercontact.model';
 })
 export class DashboardComponent {
 
-  addUserContact() {
-  }
 }

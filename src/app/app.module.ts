@@ -7,13 +7,15 @@ import { UsercontactComponent } from './usercontact/usercontact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditUsercontactComponent } from './edit-usercontact/edit-usercontact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddUsercontactComponent,
     UsercontactComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditUsercontactComponent
   ],
   imports: [
     BrowserModule,
