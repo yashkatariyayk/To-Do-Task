@@ -23,7 +23,7 @@ export class UsercontactComponent implements OnInit {
 
   editUserContact(usercontact: UserContact) {
     console.log(usercontact);
-    const itemIndex = this.usercontacts.findIndex(item => item.id == usercontact.id);
+    const itemIndex = this.usercontacts.findIndex(item => item.id === usercontact.id);
     console.log(itemIndex);
     this.usercontacts[itemIndex] = usercontact;
   }
