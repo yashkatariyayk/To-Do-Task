@@ -18,10 +18,12 @@ export class AddUsercontactComponent implements OnInit {
   @Output()
   createUsercontact = new EventEmitter<UserContact>();
 
+  emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
-      email: [''],
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required]
     });
@@ -34,12 +36,6 @@ export class AddUsercontactComponent implements OnInit {
 
   isEmailInvalid(name: string) {
     const control = this.addForm.get(name);
-    const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if (!filter.test(control.value)) {
-      console.log('email valid');
-      return control.valid;
-    }
-    console.log('email invalid');
     return control.invalid && control.dirty;
   }
 

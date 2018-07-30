@@ -17,6 +17,8 @@ export class EditUsercontactComponent implements OnInit {
   addForm: FormGroup;
   usercontact: UserContact;
 
+  emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   ngOnInit() {
     const userId = localStorage.getItem('editUserId');
     if (!userId) {
@@ -26,7 +28,7 @@ export class EditUsercontactComponent implements OnInit {
     }
     this.addForm = this.formBuilder.group({
       id: [],
-      email: ['', Validators.pattern],
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required]
     });
