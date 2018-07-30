@@ -26,7 +26,7 @@ export class EditUsercontactComponent implements OnInit {
     }
     this.addForm = this.formBuilder.group({
       id: [],
-      email: ['', Validators.required],
+      email: ['', Validators.pattern],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required]
     });
@@ -34,8 +34,28 @@ export class EditUsercontactComponent implements OnInit {
     this.addForm.setValue(data);
   }
 
+  isInvalid(name: string) {
+    const control = this.addForm.get(name);
+    return control.invalid && control.dirty;
+  }
+
+  isEmailInvalid(name: string) {
+    const control = this.addForm.get(name);
+    const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filter.test(control.value)) {
+      console.log('email valid');
+      return control.valid;
+    }
+    console.log('email invalid');
+    return control.invalid && control.dirty;
+  }
+
   onSubmit() {
     this.userService.update(this.addForm.value);
+    this.router.navigate(['']);
+  }
+
+  onCancel() {
     this.router.navigate(['']);
   }
 }

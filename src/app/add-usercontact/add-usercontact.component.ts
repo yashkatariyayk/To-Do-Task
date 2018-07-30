@@ -48,4 +48,8 @@ export class AddUsercontactComponent implements OnInit {
 
     this.router.navigate(['']);
   }
+
+  onCancel() {
+    this.router.navigate(['']);
+  }
 }
