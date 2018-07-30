@@ -43,12 +43,6 @@ export class EditUsercontactComponent implements OnInit {
 
   isEmailInvalid(name: string) {
     const control = this.addForm.get(name);
-    const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if (!filter.test(control.value)) {
-      console.log('email valid');
-      return control.valid;
-    }
-    console.log('email invalid');
     return control.invalid && control.dirty;
   }
 
