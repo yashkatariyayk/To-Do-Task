@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Angular](./img/appscreen.png "App")
 
+## Details:
+
+[Blogpost: Angular 6 CRUD Example Application](https://wechris.github.io/tips-tutorials/angular/typescript/json/crud/webapp/angular6/2018/07/30/Angular-6-CRUD-Example-Application/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
