@@ -27,7 +27,10 @@ export class UsercontactComponent implements OnInit {
 
   deleteUserContact(usercontact: ToDoTask) {
     console.log(usercontact);
-    this.ucs.delete(usercontact);
+    alert("Are You sure want to delete?"); {
+
+      this.ucs.delete(usercontact);
+    }
   }
 
   ngOnInit() {
