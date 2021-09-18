@@ -9,21 +9,21 @@ export class UsercontactService {
 
   usercontacts: ToDoTask[] = [{
     id: 0,
-    taskName: 'Alex',
+    taskName: 'ABC',
     status: 'Active',
-    date: "10/11/2020"
+    date: "Tue Sep 14 2021 00:00:00 GMT+0530 (India Standard Time)"
   },
   {
     id: 1,
-    taskName: 'Otto',
+    taskName: 'xyz',
     status: 'InActive',
-    date: 'otto.blubb@dsl.de'
+    date: "Tue Sep 14 2021 00:00:00 GMT+0530 (India Standard Time)"
   },
   {
     id: 2,
-    taskName: 'Peter',
+    taskName: 'pqr',
     status: 'Active',
-    date: 'peter.pan@neverland.com'
+    date: "Tue Sep 14 2021 00:00:00 GMT+0530 (India Standard Time)"
   }];
 
   create(usercontact: ToDoTask) {
