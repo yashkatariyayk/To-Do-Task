@@ -3,9 +3,9 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>Date</th>
+        <th>TaskName</th>
+        <th>Status</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -13,9 +13,9 @@
     <tbody>
       <tr *ngFor="let usercon of usercontacts">
         <td>{{ usercon.id }}</td>
-        <td>{{ usercon.firstname }}</td>
-        <td>{{ usercon.lastname }}</td>
-        <td>{{ usercon.email }}</td>
+        <td>{{usercon.date}}</td>
+        <td>{{ usercon.taskName }}</td>
+        <td>{{ usercon.status }}</td>       
         <td>
           <button class=" btn btn-primary " (click)="editUserContact(usercon) ">Edit</button>
         </td>

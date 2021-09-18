@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { UserContact } from '../share/usercontact.model';
+import { ToDoTask } from '../share/ToDoTask.model';
 
 @Component({
   selector: 'app-dashboard',

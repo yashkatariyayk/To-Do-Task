@@ -1,31 +1,31 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { UserContact } from '../share/usercontact.model';
+import { ToDoTask } from '../share/ToDoTask.model';
 import { UsercontactService } from '../share/usercontact.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-usercontact',
-  templateUrl: './add-usercontact.component.html',
-  styleUrls: ['./add-usercontact.component.css']
+  selector: 'app-add-todotask',
+  templateUrl: './add-todotask.component.html',
+  styleUrls: ['./add-todotask.component.css']
 })
 
-export class AddUsercontactComponent implements OnInit {
+export class AddTodotaskComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UsercontactService) { }
   addForm: FormGroup;
   @Output()
-  createUsercontact = new EventEmitter<UserContact>();
+  createUsercontact = new EventEmitter<ToDoTask>();
 
   emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
-      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required]
+      date: ['', Validators.required],
+      taskName: ['', Validators.required],
+      status: ['', Validators.required],
     });
   }
 

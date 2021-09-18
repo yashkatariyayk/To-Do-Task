@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { UserContact } from '../share/usercontact.model';
+import { ToDoTask } from '../share/ToDoTask.model';
 import { UsercontactService } from '../share/usercontact.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-usercontact',
-  templateUrl: './usercontact.component.html',
-  styleUrls: ['./usercontact.component.css'],
+  selector: 'app-todotasklist',
+  templateUrl: './todotasklist.component.html',
+  styleUrls: ['./todotasklist.component.css'],
 })
 
 export class UsercontactComponent implements OnInit {
 
-  usercontacts: UserContact[]; // Array<string>
-  usercont: UserContact;
+  usercontacts: ToDoTask[]; // Array<string>
+  usercont: ToDoTask;
 
   constructor(private ucs: UsercontactService, private router: Router) {
   }
 
-  editUserContact(usercontact: UserContact) {
+  editUserContact(usercontact: ToDoTask) {
     console.log(usercontact);
     localStorage.removeItem('editUserId');
     localStorage.setItem('editUserId', usercontact.id.toString());
@@ -25,7 +25,7 @@ export class UsercontactComponent implements OnInit {
     // this.ucs.update(usercontact);
   }
 
-  deleteUserContact(usercontact: UserContact) {
+  deleteUserContact(usercontact: ToDoTask) {
     console.log(usercontact);
     this.ucs.delete(usercontact);
   }

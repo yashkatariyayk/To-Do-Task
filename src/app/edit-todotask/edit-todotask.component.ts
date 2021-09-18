@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { UserContact } from '../share/usercontact.model';
+import { ToDoTask } from '../share/ToDoTask.model';
 import { UsercontactService } from '../share/usercontact.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -7,15 +7,15 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-edit-usercontact',
-  templateUrl: './edit-usercontact.component.html',
-  styleUrls: ['./edit-usercontact.component.css']
+  selector: 'app-edit-todotask',
+  templateUrl: './edit-todotask.component.html',
+  styleUrls: ['./edit-todotask.component.css']
 })
-export class EditUsercontactComponent implements OnInit {
+export class EditTodotaskComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UsercontactService) { }
   addForm: FormGroup;
-  usercontact: UserContact;
+  usercontact: ToDoTask;
 
   emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -28,9 +28,10 @@ export class EditUsercontactComponent implements OnInit {
     }
     this.addForm = this.formBuilder.group({
       id: [],
-      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required]
+      date: ['', Validators.required],
+      taskName: ['', Validators.required],
+      status: ['', Validators.required],
+
     });
     const data = this.userService.getUserById(+userId);
     this.addForm.setValue(data);

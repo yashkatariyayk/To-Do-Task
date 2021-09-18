@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsercontactComponent } from './usercontact.component';
+import { AddTodotaskComponent } from './add-todotask.component';
 
-describe('UsercontactComponent', () => {
-  let component: UsercontactComponent;
-  let fixture: ComponentFixture<UsercontactComponent>;
+describe('AddTodotaskComponent', () => {
+  let component: AddTodotaskComponent;
+  let fixture: ComponentFixture<AddTodotaskComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsercontactComponent ]
+      declarations: [AddTodotaskComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UsercontactComponent);
+    fixture = TestBed.createComponent(AddTodotaskComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
